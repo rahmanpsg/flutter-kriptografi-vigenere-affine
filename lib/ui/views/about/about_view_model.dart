@@ -7,9 +7,9 @@ class AboutViewModel extends CustomBaseViewModel {
   final String nama = "Fajar Muis";
   final String nim = "215280113";
 
-  final String pembimbing1 = "dffd";
-  final String pembimbing2 = "ASa";
+  final String pembimbing1 = "Hj. A. Irmayani Pawelloi, ST.,MT";
+  final String pembimbing2 = "Ahmad Selao, S.TP., M.Sc";
 
-  final String penguji1 = "Sa";
-  final String penguji2 = "sasa";
+  final String penguji1 = "Marlina, S.Kom., M.Kom";
+  final String penguji2 = "Wahyuddin, S.Kom., M.Kom";
 }

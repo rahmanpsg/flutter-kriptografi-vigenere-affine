@@ -23,13 +23,25 @@ ThemeData appTheme = ThemeData(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
+      primary: secondaryColor,
+      elevation: 0,
+      minimumSize: const Size(double.infinity, 56),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(9),
+      ),
+      textStyle: mediumTextStyle,
+      shadowColor: Colors.transparent,
+    ),
+  ),
+  outlinedButtonTheme: OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
       primary: mainColor,
       elevation: 0,
       minimumSize: const Size(double.infinity, 56),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(9),
       ),
-      textStyle: semiBoldTextStyle,
+      textStyle: mediumTextStyle,
       shadowColor: Colors.transparent,
     ),
   ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kriptografi_vigenere_affine/themes/app_colors.dart';
 import 'package:kriptografi_vigenere_affine/themes/app_text.dart';
 import 'package:kriptografi_vigenere_affine/ui/widgets/custom_card.dart';
 import 'package:stacked/stacked.dart';
