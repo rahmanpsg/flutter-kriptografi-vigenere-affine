@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked_services/stacked_services.dart';
 
+import 'app/app.dialog.dart';
 import 'app/app.locator.dart';
 import 'app/app.router.dart';
 import 'themes/app_theme.dart';
@@ -9,6 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   setupLocator();
+  setupDialogUi();
 
   runApp(const MyApp());
 }

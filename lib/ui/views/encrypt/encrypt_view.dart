@@ -38,7 +38,7 @@ class EncryptView extends StatelessWidget {
                   const SizedBox(height: 8),
                   CustomTextFieldOutline(
                     controller: model.textController,
-                    hintText: 'Masukkan teks yang akan dienkripsi',
+                    hintText: 'Masukkan teks yang akan di enkripsi',
                     textInputAction: TextInputAction.next,
                     maxLines: 5,
                     validator: (val) {
@@ -48,7 +48,7 @@ class EncryptView extends StatelessWidget {
                       return null;
                     },
                     suffixIcon: SizedBox(
-                      height: 120,
+                      height: 100,
                       width: 10,
                       child: Padding(
                         padding: const EdgeInsets.only(right: 8),
@@ -124,7 +124,7 @@ class EncryptView extends StatelessWidget {
                           controller: model.affineAKeyController,
                           hintText: 'A key (Number)',
                           keyboardType: TextInputType.number,
-                          textInputAction: TextInputAction.go,
+                          textInputAction: TextInputAction.next,
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly,
                           ],
@@ -162,9 +162,13 @@ class EncryptView extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 32),
-                  ElevatedButton(
+                  ElevatedButton.icon(
                     onPressed: model.onSubmit,
-                    child: const Text('Enkripsi'),
+                    style: ElevatedButton.styleFrom(
+                      primary: mainColor,
+                    ),
+                    icon: const Icon(Icons.mail_lock_outlined),
+                    label: const Text('Enkripsi'),
                   ),
                 ],
               ),

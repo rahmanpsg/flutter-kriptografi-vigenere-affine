@@ -5,6 +5,7 @@ import 'package:stacked_services/stacked_services.dart';
 
 abstract class CustomBaseViewModel extends BaseViewModel {
   final NavigationService navigationService = locator<NavigationService>();
+  final DialogService dialogService = locator<DialogService>();
 
   void goBack() {
     navigationService.back();

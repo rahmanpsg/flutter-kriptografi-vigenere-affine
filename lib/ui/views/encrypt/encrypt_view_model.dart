@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kriptografi_vigenere_affine/app/app.dialog.dart';
 import 'package:kriptografi_vigenere_affine/app/app.locator.dart';
 import 'package:kriptografi_vigenere_affine/app/app.logger.dart';
 import 'package:kriptografi_vigenere_affine/app/core/custom_base_view_model.dart';
@@ -36,11 +37,24 @@ class EncryptViewModel extends CustomBaseViewModel {
     final int affineAKey = int.parse(affineAKeyController.text);
     final int affineBKey = int.parse(affineBKeyController.text);
 
-    final vigenereEncrypted = _vigenere.encrypt(text, vigenereKey);
+    final vigenereEncrypted = _vigenere.encrypt(vigenereKey, text);
     final affineEncrypted =
         _affine.encrypt(affineAKey, affineBKey, vigenereEncrypted);
 
     log.i('vigenereEncrypted: $vigenereEncrypted');
     log.i('affineEncrypted: $affineEncrypted');
+
+    final affineDecrypted =
+        _affine.decrypt(affineAKey, affineBKey, affineEncrypted);
+    log.i('affineDecrypted: $affineDecrypted');
+
+    final decrypted = _vigenere.decrypt(vigenereKey, affineDecrypted);
+    log.i('decrypted: $decrypted');
+
+    dialogService.showCustomDialog(
+      variant: DialogType.customDialog,
+      title: 'Hasil Enkripsi',
+      description: affineEncrypted,
+    );
   }
 }

@@ -23,24 +23,26 @@ class CustomButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Ink(
+        width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           color: color,
         ),
         padding: const EdgeInsets.all(16),
         child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Image.asset(
               imageAsset,
               width: 50,
             ),
             const SizedBox(width: 16),
-            Text(
-              text,
-              style: boldTextStyle.copyWith(
-                fontSize: 18,
-                color: textColor,
+            Flexible(
+              child: Text(
+                text,
+                style: boldTextStyle.copyWith(
+                  fontSize: 18,
+                  color: textColor,
+                ),
               ),
             ),
           ],

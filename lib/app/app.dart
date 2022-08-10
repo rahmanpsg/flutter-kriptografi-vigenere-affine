@@ -1,5 +1,6 @@
 import 'package:kriptografi_vigenere_affine/services/affine_service.dart';
 import 'package:kriptografi_vigenere_affine/services/vigenere_service.dart';
+import 'package:kriptografi_vigenere_affine/ui/shared/dialog/custom_dialog.dart';
 import 'package:kriptografi_vigenere_affine/ui/views/about/about_view.dart';
 import 'package:kriptografi_vigenere_affine/ui/views/decrypt/decrypt_view.dart';
 import 'package:kriptografi_vigenere_affine/ui/views/encrypt/encrypt_view.dart';
@@ -8,10 +9,13 @@ import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 @StackedApp(
+  dialogs: [
+    StackedDialog(classType: CustomDialog),
+  ],
   routes: [
     MaterialRoute(page: HomeView),
-    MaterialRoute(page: EncryptView),
-    MaterialRoute(page: DecryptView),
+    CupertinoRoute(page: EncryptView),
+    CupertinoRoute(page: DecryptView),
     MaterialRoute(page: AboutView),
   ],
   dependencies: [

@@ -54,17 +54,21 @@ class HomeView extends StatelessWidget {
                       ),
                       const SizedBox(height: 32),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          CustomButton(
-                            text: 'Enkripsi',
-                            imageAsset: 'assets/images/encryption.png',
-                            onTap: model.toEncrypt,
+                          Flexible(
+                            child: CustomButton(
+                              text: 'Enkripsi',
+                              imageAsset: 'assets/images/encryption.png',
+                              onTap: model.toEncrypt,
+                            ),
                           ),
-                          CustomButton(
-                            text: 'Dekripsi',
-                            imageAsset: 'assets/images/decryption.png',
-                            onTap: model.toDecrypt,
+                          const SizedBox(width: 16),
+                          Flexible(
+                            child: CustomButton(
+                              text: 'Dekripsi',
+                              imageAsset: 'assets/images/decryption.png',
+                              onTap: model.toDecrypt,
+                            ),
                           ),
                         ],
                       ),
@@ -80,11 +84,14 @@ class HomeView extends StatelessWidget {
                 ),
                 const Align(
                   alignment: Alignment.bottomCenter,
-                  child: Text(
-                    "Teknik Informatika UM Pare © 2022",
-                    style: semiBoldTextStyle,
+                  child: Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      "Teknik Informatika UM Pare © 2022",
+                      style: semiBoldTextStyle,
+                    ),
                   ),
-                )
+                ),
               ],
             ),
           ),
