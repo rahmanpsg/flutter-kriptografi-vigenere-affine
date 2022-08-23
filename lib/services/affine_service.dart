@@ -1,9 +1,9 @@
 import 'package:kriptografi_vigenere_affine/utils/utils.dart';
 
 class AffineService {
-  String _convert(int a, int b, String text, String m) {
-    if (a.gcd(26) != 1) {
-      throw ArgumentError("$a is not prime with 26.");
+  String _convert(int m, int b, String text, String type) {
+    if (m.gcd(26) != 1) {
+      throw ArgumentError("$m is not prime with 26.");
     }
 
     StringBuffer cipher = StringBuffer();
@@ -14,11 +14,11 @@ class AffineService {
       if (isLetter(ch)) {
         String s;
 
-        if (m == "encrypt") {
-          s = alphabet[((a * alphabet.indexOf(ch.toUpperCase())) + b) % 26];
+        if (type == "encrypt") {
+          s = alphabet[((m * alphabet.indexOf(ch.toUpperCase())) + b) % 26];
         } else {
           s = alphabet[
-              (a.modInverse(26) * (alphabet.indexOf(ch.toUpperCase()) - b)) %
+              (m.modInverse(26) * (alphabet.indexOf(ch.toUpperCase()) - b)) %
                   26];
         }
 
@@ -31,15 +31,7 @@ class AffineService {
     return cipher.toString();
   }
 
-  /// [a] and [b] are required.
-  ///
-  /// [ArgumentError] if [a] is not prime with 26.
-  /// Encrypt [text].
-  String encrypt(int a, int b, String text) => _convert(a, b, text, "encrypt");
+  String encrypt(int m, int b, String text) => _convert(m, b, text, "encrypt");
 
-  /// [a] and [b] are required.
-  ///
-  /// [ArgumentError] if [a] is not prime with 26.
-  /// Decrypt [text].
-  String decrypt(int a, int b, String text) => _convert(a, b, text, "decrypt");
+  String decrypt(int m, int b, String text) => _convert(m, b, text, "decrypt");
 }

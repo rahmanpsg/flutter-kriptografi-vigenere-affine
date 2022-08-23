@@ -122,7 +122,7 @@ class EncryptView extends StatelessWidget {
                       Flexible(
                         child: CustomTextFieldOutline(
                           controller: model.affineAKeyController,
-                          hintText: 'A key (Number)',
+                          hintText: 'Key m (Number)',
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
                           inputFormatters: [
@@ -144,7 +144,7 @@ class EncryptView extends StatelessWidget {
                       Flexible(
                         child: CustomTextFieldOutline(
                           controller: model.affineBKeyController,
-                          hintText: 'B key (Number)',
+                          hintText: 'Key b (Number)',
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.go,
                           inputFormatters: [
