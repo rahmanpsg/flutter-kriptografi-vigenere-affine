@@ -1,6 +1,6 @@
 name: kriptografi_vigenere_affine
 description: A new Flutter project.
-version: 0.0.1+1
+version: 1.0.1+1
 
 environment:
   sdk: ">=2.17.6 <3.0.0"
